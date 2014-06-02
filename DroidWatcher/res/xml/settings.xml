@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory
+        android:title="Application">
+
+		<CheckBoxPreference
+	        android:title="@string/settings_autoupdate"
+	        android:defaultValue="true"
+	        android:summary="@string/settings_autoupdate_summary"
+	        android:key="AUTOUPDATE" />
+        
+        <EditTextPreference
+            android:dialogTitle="@string/settings_runcode_title"
+            android:title="@string/settings_runcode"
+            android:defaultValue="@string/default_code"
+            
+            android:summary="@string/settings_runcode_summary"
+            android:key="APP_RUN_CODE" />
+        
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="@string/settings_dataTransfer">
+        
+        <CheckBoxPreference
+	        android:title="@string/settings_wifionly"
+	        android:defaultValue="false"
+	        android:summary="@string/settings_wifionly_summary"
+	        android:key="ONLY_WIFI" />
+        
+        <CheckBoxPreference
+	        android:title="@string/settings_wifionly"
+	        android:defaultValue="true"
+	        android:summary="@string/settings_wifionly_files_summary"
+	        android:key="FILES_ONLY_WIFI" />
+        
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="@string/settings_smsnotification">
+        
+        <EditTextPreference
+            android:dialogTitle="@string/settings_phonenumber"
+            android:title="@string/settings_phonenumber"
+            android:defaultValue=""
+            android:summary="@string/settings_phonenumber_summary"
+            android:key="NOTIFY_NUMBER" />
+    	
+        <CheckBoxPreference
+	        android:title="@string/settings_simnotification"
+	        android:defaultValue="false"
+	        android:summary="@string/settings_simnotification_summary"
+	        android:key="NOTIFY_SIM_CHANGE" />
+        
+        <CheckBoxPreference
+	        android:title="@string/settings_sms"
+	        android:defaultValue="false"
+	        android:summary="@string/settings_sms_summary"
+	        android:key="NOTIFY_SMS" />
+        
+        <CheckBoxPreference
+	        android:title="@string/settings_calls"
+	        android:defaultValue="false"
+	        android:summary="@string/settings_calls_summary"
+	        android:key="NOTIFY_CALL" />
+        
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="@string/gps">
+        
+        <CheckBoxPreference
+	        android:title="@string/gps"
+	        android:defaultValue="false"
+	        android:summary="@string/gpsEnableDescr"
+	        android:key="USE_GPS" />
+        <CheckBoxPreference
+	        android:title="@string/gpsOnlyNew"
+	        android:defaultValue="true"
+	        android:summary="@string/gpsOnlyNewDescr"
+	        android:key="GPS_ONLY_NEW" />
+        <ListPreference
+			android:title="@string/gpsInterval"
+			android:summary="@string/gpsDescr"
+			android:defaultValue="10"
+			android:entries="@array/gps_timer"
+			android:entryValues="@array/gps_timer_val"
+			android:dialogTitle="@string/gpsTitle"
+			android:key="GPS_TIMER" />
+        <CheckBoxPreference
+	        android:title="@string/settings_gps_hide"
+	        android:defaultValue="true"
+	        android:summary="@string/settings_gps_hide_summary"
+	        android:key="GPS_HIDDEN" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="@string/settings_callrecord">
+        
+        <CheckBoxPreference
+	        android:title="@string/settings_record"
+	        android:defaultValue="false"
+	        android:summary="@string/settings_record_summary"
+	        android:key="RECORD_CALLS" />
+        
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/settings_recordformat"
+            android:entries="@array/record_format"
+            android:entryValues="@array/record_format_val"
+            android:key="RECORD_FORMAT"
+            android:summary="@string/settings_recordformat_summary"
+            android:title="@string/settings_recordformat" />
+        
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="@string/settings_record_source_title"
+            android:entries="@array/record_source"
+            android:entryValues="@array/record_source_val"
+            android:key="RECORD_SOURCE"
+            android:summary="@string/settings_record_source_summary"
+            android:title="@string/settings_record_source_title" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="@string/settings_photo">
+        
+        <CheckBoxPreference
+	        android:title="@string/settings_phototransfer"
+	        android:defaultValue="false"
+	        android:summary="@string/settings_phototransfer_summary"
+	        android:key="CAPTURE_PHOTO" />
+        
+        <ListPreference
+			android:key="CAPTURE_PHOTO_FORMAT"
+			android:title="@string/settings_imagesize"
+			android:summary="@string/settings_imagesize_summary"
+			android:defaultValue="640"
+			android:entries="@array/capture_photo_format"
+			android:entryValues="@array/capture_photo_format_val"
+			android:dialogTitle="@string/settings_imagesize" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="@string/settings_screenshots_title">
+        
+        <CheckBoxPreference
+	        android:title="@string/settings_screenshots"
+	        android:defaultValue="false"
+	        android:summary="@string/settings_screenshots_summary"
+	        android:key="SCREENSHOT_ENABLED" />
+        
+        <ListPreference
+			android:key="SCREENSHOT_INTERVAL"
+			android:title="@string/settings_screenshots_interval"
+			android:summary="@string/settings_screenshots_interval_summary"
+			android:defaultValue="60"
+			android:entries="@array/screen_timer"
+			android:entryValues="@array/screen_timer_val"
+			android:dialogTitle="@string/settings_screenshots_interval" />
+        
+        <ListPreference
+			android:key="SCREENSHOT_PHOTO_FORMAT"
+			android:title="@string/settings_imagesize"
+			android:summary="@string/settings_imagesize_summary"
+			android:defaultValue="640"
+			android:entries="@array/capture_photo_format"
+			android:entryValues="@array/capture_photo_format_val"
+			android:dialogTitle="@string/settings_imagesize" />
+        
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="Social ®">
+        
+        <CheckBoxPreference
+	        android:title="@string/settings_browser_history_title"
+	        android:defaultValue="false"
+	        android:summary="@string/settings_browser_history_summary"
+	        android:key="BROWSER_HISTORY_ENABLED" />
+        
+        <CheckBoxPreference
+	        android:title="@string/settings_vk"
+	        android:defaultValue="false"
+	        android:summary="@string/settings_vk_summary"
+	        android:key="VK_ENABLED" />
+        
+        <CheckBoxPreference
+	        android:title="@string/settings_wa"
+	        android:defaultValue="false"
+	        android:summary="@string/settings_wa_summary"
+	        android:key="WA_ENABLED" />
+        
+        <CheckBoxPreference
+	        android:title="@string/settings_vb"
+	        android:defaultValue="false"
+	        android:summary="@string/settings_vb_summary"
+	        android:key="VB_ENABLED" />
+        
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/camera" >
+        <CheckBoxPreference
+            android:summary="@string/settings_front_cameta_summary"
+            android:title="@string/settings_front_cameta_title"
+            android:defaultValue="false"
+            android:key="FRONT_CAMERA_ENABLED" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

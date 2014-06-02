@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <ScrollView xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!--     android:layout_width="fill_parent" -->
+<!--     android:layout_height="fill_parent"> -->
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:padding="5dp" >
+	
+	    <CheckBox
+	        android:id="@+id/usefilterCB"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/useFilter" />
+		
+<!-- 	    <LinearLayout -->
+<!-- 	        android:layout_width="fill_parent" -->
+<!-- 	        android:layout_height="wrap_content" -->
+<!-- 	        android:background="@drawable/border" -->
+<!-- 	        android:orientation="vertical" > -->
+	
+	        <TextView
+	            android:id="@+id/textView12"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/watchFor"
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	        <RadioGroup
+	            android:id="@+id/filterType"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <RadioButton
+	                android:id="@+id/type0"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:checked="true"
+	                android:text="@string/onlyFromList" />
+	
+	            <RadioButton
+	                android:id="@+id/type1"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/exceptList" />
+
+	        </RadioGroup>
+	
+<!-- 	    </LinearLayout> -->
+	
+	    <TableRow
+	        android:id="@+id/tableRow1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp" >
+	
+	        <EditText
+	            android:id="@+id/editNum"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:hint="@string/phoneNumber"
+	            android:inputType="phone"
+	            android:minEms="12" >
+	
+	            <requestFocus />
+	        </EditText>
+	
+	        <Button
+	            android:id="@+id/addButton"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="@string/plus"
+	            android:textStyle="bold" />
+	
+	    </TableRow>
+	    
+	    <TextView
+	        android:id="@+id/textView3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/filterHint"
+	        android:textAppearance="?android:attr/textAppearanceSmall" />
+	    
+	    <ListView
+	        android:id="@+id/number_list"
+	        android:layout_width="fill_parent"
+	        android:layout_height="match_parent" >
+	        
+	    </ListView>
+	
+	</LinearLayout>
+<!-- </ScrollView> -->

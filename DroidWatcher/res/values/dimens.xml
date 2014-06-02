@@ -1,0 +1,7 @@
+<resources>    
+    <dimen name="xsmall">4dp</dimen>
+    <dimen name="small">8dp</dimen>
+    <dimen name="medium">12dp</dimen>
+    <dimen name="large">16dp</dimen>
+    <dimen name="xlarge">20dp</dimen>
+</resources>

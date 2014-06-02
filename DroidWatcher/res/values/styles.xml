@@ -1,0 +1,22 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="BaseTheme" parent="android:Theme.Light">
+
+        <!-- Костыли и фичи для версий ниже 3.0 писать здесь -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseTheme">
+
+        <!-- Общие костыли и фичи для все версий -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="WizarHeader">
+        <item name="android:textColor">#690</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/xsmall</item>
+    </style>
+
+</resources>
