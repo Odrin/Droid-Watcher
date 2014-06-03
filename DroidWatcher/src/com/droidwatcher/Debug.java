@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -19,6 +20,7 @@ public class Debug {
 	
 	private static final String sTag = "DEBUG";
 	private static StringBuilder sStringBuilder;
+	private static SimpleDateFormat sDateFormat;
 	
 	public static void setRootToolsDebugMode(){
 		RootTools.debugMode = DEBUG;
@@ -27,8 +29,10 @@ public class Debug {
 	private static StringBuilder getStringBuilder(){
 		if (sStringBuilder == null) {
 			sStringBuilder = new StringBuilder();
+			sDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss.SSS");
 			
 			sStringBuilder
+				.append(sDateFormat.format(new Date())).append("\n")
 				.append("version: ").append(AppService.APP_VERSION).append("\n")
 				.append("root: ").append(AppService.isRootAvailable()).append("\n")
 				.append(android.os.Build.MODEL).append("\n")
@@ -44,7 +48,7 @@ public class Debug {
 	
 	public static synchronized void debugLog(String msg){
 		try {
-			getStringBuilder().append(new Date().getTime()).append(" ").append(msg).append("\n");
+			getStringBuilder().append(sDateFormat.format(new Date())).append(" ").append(msg).append("\n");
 			
 		} catch (Exception e) {
 			exception(e);
@@ -53,7 +57,7 @@ public class Debug {
 	
 	public static synchronized void debugLog(Exception exception){
 		try {
-			getStringBuilder().append(new Date().getTime()).append(" ").append(exception.getMessage()).append("\n");
+			getStringBuilder().append(sDateFormat.format(new Date())).append(" ").append(exception.getMessage()).append("\n");
 			
 			StackTraceElement[] elements = exception.getStackTrace();
 			if (elements == null || elements.length == 0) {
