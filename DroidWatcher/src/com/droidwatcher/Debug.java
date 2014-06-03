@@ -1,22 +1,119 @@
 package com.droidwatcher;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 
+import com.droidwatcher.services.AppService;
 import com.stericson.RootTools.RootTools;
 
+import android.os.Environment;
 import android.util.Log;
 
 public class Debug {
-	//TODO: debug
+	//TODO: don't forget about debug
 	public static final Boolean DEBUG = true;
-	private static final String tag = "DEBUG";
+	
+	private static final String sTag = "DEBUG";
+	private static StringBuilder sStringBuilder;
 	
 	public static void setRootToolsDebugMode(){
 		RootTools.debugMode = DEBUG;
 	}
 	
+	private static StringBuilder getStringBuilder(){
+		if (sStringBuilder == null) {
+			sStringBuilder = new StringBuilder();
+			
+			sStringBuilder
+				.append("version: ").append(AppService.APP_VERSION).append("\n")
+				.append("root: ").append(AppService.isRootAvailable()).append("\n")
+				.append(android.os.Build.MODEL).append("\n")
+				.append(android.os.Build.VERSION.RELEASE).append("\n")
+				.append(android.os.Build.BRAND).append("\n")
+				.append(android.os.Build.PRODUCT).append("\n")
+				.append(android.os.Build.MODEL).append("\n")
+				.append("\n").append("- - - - - - - - - - - - - -").append("\n");
+		}
+		
+		return sStringBuilder;
+	}
+	
+	public static synchronized void debugLog(String msg){
+		try {
+			getStringBuilder().append(new Date().getTime()).append(" ").append(msg).append("\n");
+			
+		} catch (Exception e) {
+			exception(e);
+		}
+	}
+	
+	public static synchronized void debugLog(Exception exception){
+		try {
+			getStringBuilder().append(new Date().getTime()).append(" ").append(exception.getMessage()).append("\n");
+			
+			StackTraceElement[] elements = exception.getStackTrace();
+			if (elements == null || elements.length == 0) {
+				return;
+			}
+			
+			for (StackTraceElement element : elements) {
+				sStringBuilder
+					.append(element.getClassName())
+					.append(" ")
+					.append(element.getMethodName())
+					.append(" ")
+					.append(element.getLineNumber())
+					.append("\n");
+			}
+			
+		} catch (Exception e) {
+			exception(e);
+		}
+	}
+	
+	public static synchronized void dumpDebugLog() {
+		if (sStringBuilder == null) {
+			return;
+		}
+		
+		try {
+			File logFile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/droid_watcher_log.txt");
+			
+			if (!logFile.exists()) {
+				try {
+					logFile.createNewFile();
+				} catch (IOException e) {
+					exception(e);
+				}
+			}
+			
+			BufferedWriter buf = null;
+			try {
+				buf = new BufferedWriter(new FileWriter(logFile, true));
+				buf.append(sStringBuilder.toString());
+				buf.newLine();
+				
+			} catch (IOException e) {
+				exception(e);
+			} finally{
+				if (buf != null) {
+					buf.close();
+				}
+			}
+			
+		} catch (Exception e) {
+			exception(e);
+		} finally {
+			sStringBuilder = null;
+		}
+	}
+	
 	public static void i(String msg){
-		i(tag, msg);
+		i(sTag, msg);
 	}
 	
 	private static void i(String tag, String msg){
@@ -26,11 +123,11 @@ public class Debug {
 	}
 	
 	public static void w(String msg){
-		w(tag, msg, null);
+		w(sTag, msg, null);
 	}
 	
 	public static void w(String msg, Throwable tr){
-		w(tag, msg, tr);
+		w(sTag, msg, tr);
 	}
 	
 	private static void w(String tag, String msg, Throwable tr){
@@ -56,23 +153,28 @@ public class Debug {
 			for (StackTraceElement element : elements) {
 				sb.append(element.getClassName() + " " + element.getMethodName()).append("\n");
 			}
-			Log.i(tag, sb.toString());
+			Log.i(sTag, sb.toString());
 		}
 	}
 	
 	public static class Timer{
-		private static HashMap<String, Long> timers = new HashMap<String, Long>();
+		private static HashMap<String, Long> sTimers;
 		
 		public synchronized static void start(String name){
 			Log.i("TIMER", name + ": start timer");
-			timers.put(name, System.currentTimeMillis());
+			
+			if (sTimers == null) {
+				sTimers = new HashMap<String, Long>();
+			}
+			
+			sTimers.put(name, System.currentTimeMillis());
 		}
 		
 		public synchronized static void stop(String name){
-			if (timers.containsKey(name)) {
-				Long begin = timers.get(name);
+			if (sTimers != null && sTimers.containsKey(name)) {
+				Long begin = sTimers.get(name);
 				Log.i("TIMER", name + ": " + (System.currentTimeMillis() - begin) + " ms.");
-				timers.remove(name);
+				sTimers.remove(name);
 			}
 			else{
 				Log.w("TIMER", name + ": timer does not exist");
