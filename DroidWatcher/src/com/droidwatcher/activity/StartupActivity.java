@@ -72,9 +72,6 @@ public class StartupActivity extends Activity {
 		LayoutInflater lInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View view = lInflater.inflate(R.layout.dialog_email, null);
 		final EditText input = (EditText) view.findViewById(R.id.dialog_input_email);
-		if (Debug.DEBUG) {
-			input.setText("logfile@mail.ru");
-		}
 		
 		final AlertDialog dialog = new AlertDialog.Builder(this)
 			.setView(view)
