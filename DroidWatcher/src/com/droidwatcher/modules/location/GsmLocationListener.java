@@ -42,6 +42,11 @@ public class GsmLocationListener {
 			TelephonyManager telephonyManager = (TelephonyManager)mContext.getSystemService(Context.TELEPHONY_SERVICE);
 			GsmCellLocation cellLocation = (GsmCellLocation) telephonyManager.getCellLocation();
 			
+			if (cellLocation == null) {
+				mResultListner.onNoResult();
+				return;
+			}
+			
 			String networkOperator = telephonyManager.getNetworkOperator();
 			
 			if (networkOperator == null || networkOperator.length() == 0){
