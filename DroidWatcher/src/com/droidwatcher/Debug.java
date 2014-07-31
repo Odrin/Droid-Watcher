@@ -16,7 +16,7 @@ import android.util.Log;
 
 public class Debug {
 	//TODO: don't forget about debug
-	public static final Boolean DEBUG = false;
+	public static final Boolean DEBUG = true;
 	
 	private static final String sTag = "DEBUG";
 	private static StringBuilder sStringBuilder;
