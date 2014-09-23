@@ -115,7 +115,6 @@ public class ImageUtil {
 	 * Check ~30% of pixels and return "true" if all is black
 	 */
 	public static boolean isBlack(Bitmap bmp){
-		Debug.Timer.start("isBlack");
 		try {
 			int width = bmp.getWidth();
 			int height = bmp.getHeight();
@@ -130,7 +129,6 @@ public class ImageUtil {
 					pixel = bmp.getPixel(x, y);
 					
 					if (Color.red(pixel) > 20 && Color.green(pixel) > 20 && Color.blue(pixel) > 20) {
-						Debug.i(Color.red(pixel) + ", " + Color.green(pixel) + ", " + Color.blue(pixel));
 						return false;
 					}
 					
@@ -146,8 +144,6 @@ public class ImageUtil {
 			Debug.exception(e);
 			ACRA.getErrorReporter().handleSilentException(e);
 			return false;
-		} finally {
-			Debug.Timer.stop("isBlack");
 		}
 	}
 }
