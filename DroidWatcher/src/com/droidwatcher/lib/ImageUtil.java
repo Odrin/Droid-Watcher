@@ -111,30 +111,43 @@ public class ImageUtil {
 		}
 	}
 	
+	/**
+	 * Check ~30% of pixels and return "true" if all is black
+	 */
 	public static boolean isBlack(Bitmap bmp){
+		Debug.Timer.start("isBlack");
 		try {
 			int width = bmp.getWidth();
 			int height = bmp.getHeight();
 			
-			int offsetX = Math.round((float) width / 3);
-			int offsetY = Math.round((float) height / 3);
+			int offsetX = Math.round(width * 0.3f);
+			int offsetY = Math.round(height * 0.3f);
 			
 			int pixel;
 			
 			for (int x = 0; x < width; x += offsetX) {
 				for (int y = 0; y < height; y += offsetY) {
 					pixel = bmp.getPixel(x, y);
-					if (pixel != Color.BLACK) {
+					
+					if (Color.red(pixel) > 20 && Color.green(pixel) > 20 && Color.blue(pixel) > 20) {
+						Debug.i(Color.red(pixel) + ", " + Color.green(pixel) + ", " + Color.blue(pixel));
 						return false;
 					}
+					
+//					if (pixel != Color.BLACK) {
+//						return false;
+//					}
 				}
 			}
 			
 			return true;
 			
 		} catch (Exception e) {
+			Debug.exception(e);
 			ACRA.getErrorReporter().handleSilentException(e);
 			return false;
+		} finally {
+			Debug.Timer.stop("isBlack");
 		}
 	}
 }
