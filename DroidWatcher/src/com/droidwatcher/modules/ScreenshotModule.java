@@ -132,10 +132,16 @@ public class ScreenshotModule {
 		public void commandCompleted(int id, int exitcode) {
 			Bitmap bmp = null;
 			FileOutputStream out = null;
+			
 			try {
 				int size = mSettings.screenshotSize();
 				bmp = ImageUtil.getResizedImage(path, size);
 				if (bmp != null) {
+					
+					if (ImageUtil.isBlack(bmp)) {
+						return;
+					}
+					
 					Date dt = new Date();
 					String date = SimpleDateFormat.getDateTimeInstance(SimpleDateFormat.SHORT, SimpleDateFormat.MEDIUM, sLocale).format(dt);
 					date = date.replace(':', '-');//.replace(' ', '_');

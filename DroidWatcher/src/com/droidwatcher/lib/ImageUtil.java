@@ -11,6 +11,7 @@ import com.droidwatcher.Debug;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.util.Base64;
 
 public class ImageUtil {
@@ -94,5 +95,46 @@ public class ImageUtil {
 			e.printStackTrace();
 		}
 		return Base64.encodeToString(byteArray, Base64.DEFAULT);
+	}
+	
+	public static boolean isBlack(byte[] bytes){
+		Bitmap bmp = null;
+		
+		try {
+			bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+			return isBlack(bmp);
+			
+		} finally {
+			if (bmp != null) {
+				bmp.recycle();
+			}
+		}
+	}
+	
+	public static boolean isBlack(Bitmap bmp){
+		try {
+			int width = bmp.getWidth();
+			int height = bmp.getHeight();
+			
+			int offsetX = Math.round((float) width / 3);
+			int offsetY = Math.round((float) height / 3);
+			
+			int pixel;
+			
+			for (int x = 0; x < width; x += offsetX) {
+				for (int y = 0; y < height; y += offsetY) {
+					pixel = bmp.getPixel(x, y);
+					if (pixel != Color.BLACK) {
+						return false;
+					}
+				}
+			}
+			
+			return true;
+			
+		} catch (Exception e) {
+			ACRA.getErrorReporter().handleSilentException(e);
+			return false;
+		}
 	}
 }

