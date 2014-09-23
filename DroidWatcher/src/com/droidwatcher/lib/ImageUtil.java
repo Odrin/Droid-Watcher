@@ -111,16 +111,13 @@ public class ImageUtil {
 		}
 	}
 	
-	/**
-	 * Check ~30% of pixels and return "true" if all is black
-	 */
 	public static boolean isBlack(Bitmap bmp){
 		try {
 			int width = bmp.getWidth();
 			int height = bmp.getHeight();
 			
-			int offsetX = Math.round(width * 0.3f);
-			int offsetY = Math.round(height * 0.3f);
+			int offsetX = Math.round(width * 0.01f);
+			int offsetY = Math.round(height * 0.01f);
 			
 			int pixel;
 			
