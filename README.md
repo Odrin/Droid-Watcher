@@ -1,11 +1,3 @@
-Warning! Внимание!
-=============
-Site http://droidwatcher.ru/ is not an official "Droid Wather" site, and the application on this site, is not an application "Droid Watcher". This application can be used to access your personal data, the applications data on your device, passwords, and can also send spam and perform other illegal actions. For your safety, do not use a resource http://droidwatcher.ru/ - it is a fake.
-
-Сайт http://droidwatcher.ru/ не является официальным сайтом пректа "Droid Wather", а приложение, распространяемое на нем, не является приложением "Droid Watcher". Это приложение может использоваться для доступа к Вашим персональным данным, данным приложений на Вашем устройстве и паролям, а так же может рассылать от Вашего имени спам и выполнять другие неправомерные действия. Для Вашей безопасности не пользуйтесь ресурсом http://droidwatcher.ru/ - это фэйк.
-
-
-
 Droid-Watcher
 =============
 
